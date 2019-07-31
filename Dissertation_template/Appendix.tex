@@ -1,0 +1,193 @@
+
+%% A sample appendix
+%%
+%%**********************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either
+%% expressed or implied; without even the implied warranty of
+%% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE!
+%% User assumes all risk.
+%% In no event shall any contributor to this code be liable for any damages
+%% or losses, including, but not limited to, incidental, consequential, or
+%% any other damages, resulting from the use or misuse of any information
+%% contained here.
+%%**********************************************************************
+%%
+%% $Id: Appendix.tex,v 1.5 2006/08/24 21:12:47 Owner Exp $
+%%
+
+% N.B.: an appendix chapter starts with "appchapter" instead of "chapter"
+%
+% The first argument in [ ] is the title as displayed in the table of contents
+% The second argument is the title as displayed here.  Use \\ as appropriate in
+%   this title to get desired line breaks
+\appchapter[An Appendix]{Gaussian Distribution: Marginal and Conditional Proof}\label{App_A}
+
+
+A random variable $X= [x_1,x_2,...,x_n]^T$ has a Gaussian Distribution  with probability density function (pdf) given by
+
+\begin{equation}\label{eq1}
+p(X) = \left(\frac{1}{2\pi}\right)^{n/2} \frac{1}{|K|^{1/2}} \ exp\left\{-\frac{1}{2}X^TK^{-1}X\right\}
+\end{equation}
+
+where $K$ is the $n \times n$ covariance matrix. (we consider the case where the the $\mu_i$ is a $0$ $n \times 1$ vector; results for the general case are easily found by transformation)
+
+Consider $x$ partitioned into two components, $[x_1,x_2]^T$ with dimensions $d$ and $n-d$ respectively. The joint distribution is represented as
+
+\begin{equation}\label{eq2}
+p\left(\left[\begin{array}{c}x_1\\ x_2\end{array}\right]\right) \sim N\left(\mu = \left[\begin{array}{c}{\mu }_{1}=0\\ {\mu }_{2}=0\end{array}\right],K =\left[\begin{array}{cc}{K}_{11} \ {K}_{12}\\ {K}_{21}\ {K}_{22}\end{array}\right]\right)
+\end{equation}
+
+where $K_{11}$ is $d \times d$, $K_{22}$ is $(n-d) \times (n-d)$, $K_{21} = K_{12}^T$, and
+
+\begin{equation}\label{eq3}
+K^{-1} =V=\left[\begin{array}{cc}{V}_{11} \ {V}_{12}\\ {V}_{21}\ {V}_{22}\end{array}\right]
+\end{equation}
+
+so that $KV = I_n$, where $I_n$ is a $n \times n$ identity matrix, gives
+
+\begin{equation}\label{eq4}
+\left[\begin{array}{cc}{K}_{11} \ {K}_{12}\\ {K}_{21}\ {K}_{22}\end{array}\right]
+\left[\begin{array}{cc}{V}_{11} \ {V}_{12}\\ {V}_{21}\ {V}_{22}\end{array}\right]
+=
+\left[\begin{array}{cc}{I}_{d} \ \quad 0\\ 0\ \quad {I}_{n-d}\end{array}\right]
+\end{equation}
+
+This results in the following relationships:
+
+\begin{equation}\label{eq5}
+{K}_{11}{V}_{11} + {K}_{12}{V}_{21} = I_d
+\end{equation}
+\begin{equation}\label{eq6}
+{K}_{11}{V}_{12} + {K}_{12}{V}_{22} = 0
+\end{equation}
+\begin{equation}\label{eq7}
+{K}_{21}{V}_{11} + {K}_{22}{V}_{21} = 0
+\end{equation}
+\begin{equation}\label{eq8}
+{K}_{21}{V}_{12} + {K}_{22}{V}_{22} = I_{n-d}
+\end{equation}
+
+From the Gaussian pdf in equation \ref{eq1}, the joint distribution's exponent term can be re-written as:
+
+\begin{equation}\label{eq9}
+x^TK^{-1}x=x_1^TV_{11}x_1+x_1^TV_{12}x_2+x_2^TV_{21}x_1+x_2^TV_{22}x_2
+\end{equation}
+
+In order to continue, we must complete the square in regards to $x_2$:
+
+\begin{align}\label{eq10}
+\begin{split}
+x^TK^{-1}x & =(x_2-m)^TM(x_2-m) + c \\
+& = x_2^TMx_2 - x_2^TMm +m^TMm + c
+\end{split}
+\end{align}
+
+When we compare with equation \ref{eq9}, we learn the following equivalencies:
+
+\begin{align}\label{eq11}
+\begin{split}
+x_2^TMx_2 & = x_2^TV_{22}x_2 \\
+M & = V_{22}
+\end{split}
+\end{align}
+
+\begin{align}\label{eq12}
+\begin{split}
+-x_2^TMm & = x_2^TV_{21}x_1 \\
+-x_2^TV_{22}m & = x_2^TV_{21}x_1 \\
+m & = -V_{22}^{-1}V_{21}x_1
+\end{split}
+\end{align}
+
+\begin{align}
+\label{eq13}
+\begin{split}
+c+ m^TMm & = x_1^TV_{11}x_1 \\
+c + \left[-V_{22}^{-1}V_{21}x_1\right]^TV_{22}\left[-V_{22}^{-1}V_{21}x_1\right] & = x_2^TV_{21}x_1 \\
+c + V_{21}^Tx_1^TV_{22}^{-1}V_{21}x_1 & = x_2^TV_{21}x_1 \\
+c & = x_1^T(V_{11}- V_{21}^TV_{22}^{-1}V_{21})x_1
+\end{split}
+\end{align}
+
+and resulting in a final exponential term of:
+
+\begin{equation}\label{eq14}
+x^TK^{-1}x=\left[x2 + V_{22}^{-1}V_{21}x_1\right]^TV_{22}\left[x_2 + V_{22}^{-1}V_{21}x_1\right]+ \left[x_1^T(V_{11}- V_{21}^TV_{22}^{-1}V_{21})x_1\right]
+\end{equation}
+
+This can be interpreted as the first portion being a function of $x_2$, given $x_1$, and the second as a function of $x_1$ only. As a result, we can factorize the full joint pdf using the chain rule for random variables
+
+\begin{equation}\label{eq15}
+p(x) = p(x_2|x_1)p(x_1)
+\end{equation}
+where
+\begin{equation}\label{eq16}
+p(x_2|x_1) \propto exp \left\{ \frac{-1}{2} \left[x_2 + V_{22}^{-1}V_{21}x_1\right]^TV_{22}\left[x_2 + V_{22}^{-1}V_{21}x_1\right]\right\}
+\end{equation}
+and
+
+\begin{equation}\label{eq17}
+p(x_1) \propto exp \left\{ \frac{-1}{2}\left[x_1^T(V_{11}- V_{21}^TV_{22}^{-1}V_{21})x_1\right]\right\}
+\end{equation}
+
+giving:
+
+\begin{equation}\label{eq18}
+p(x_2|x_1) \sim \mathcal{N}(V_{22}^{-1}V_{21}x_1,V_{22}^{-1})
+\end{equation}
+
+and
+
+\begin{equation}\label{eq19}
+p(x_1) \sim \mathcal{N}\left(0, (V_{11}- V_{21}^TV_{22}^{-1}V_{21})\right)
+\end{equation}
+
+Now, pulling from equation \ref{eq6}, $K_{12}=-K_{11}V_{12}V_{22}^{-1}$, and equation \ref{eq5}, we can substitute in $K_{12}$:
+
+\begin{align}
+\label{eq20}
+\begin{split}
+{K}_{11}{V}_{11} + {K}_{12}{V}_{21} & = I_d \\
+{K}_{11}{V}_{11} - K{11}V_{12}V_{22}^{-1}{V}_{21} & = I_d  \\
+{K}_{11} & = \left({V}_{11} - V_{12}V_{22}^{-1}{V}_{21}\right)^{-1} \\
+{K}_{11} & = \left({V}_{11} - V_{21}^TV_{22}^{-1}{V}_{21}\right)^{-1}
+\end{split}
+\end{align}
+
+and therefore, by equation \ref{eq19},
+
+\begin{equation}\label{eq21}
+p(x_1) \sim \mathcal{N}\left(0, K_{11}\right)
+\end{equation}
+
+Using similar arguments, we can conclude the following for the conditional distribution:
+
+Pulling from equation \ref{eq6}, $V_{12}=-K_{11}^{-1}K_{12}V_{22}$, and equation \ref{eq8}, we can substitute in $V_{12}$:
+
+\begin{align}
+\label{eq22}
+\begin{split}
+{K}_{21}{V}_{12} + {K}_{22}{V}_{22} & = I_{n-d} \\
+-{K}_{21}K_{11}^{-1}K_{12}V_{22} + {K}_{22}{V}_{22} & = I_{n-d} \\
+-{K}_{21}K_{11}^{-1}K_{12} + {K}_{22} & = {V}_{22}^{-1} \\
+{K}_{22} -{K}_{12}^TK_{11}^{-1}K_{12} & = {V}_{22}^{-1}
+\end{split}
+\end{align}
+
+Then, from equation \ref{eq6}, transposing both sides and pre-multiplying by $V_{22}^{-1}$ and post-multiplying by $K_{11}^{-1}$, we get
+\begin{align}
+\label{eq23}
+\begin{split}
+V_{22}^{-1}\left[({K}_{11}{V}_{12} + {K}_{12}{V}_{22})^{T}\right]K_{11}^{-1} & = V_{22}^{-1}(0^T)K_{11}^{-1} \\
+V_{22}^{-1}\left[{V}_{21}K_{11} + {V}_{22}{K}_{21}\right]K_{11}^{-1} & = 0 \\
+V_{22}^{-1}{V}_{21} + {K}_{21}K_{11}^{-1} & = 0 \\
+V_{22}^{-1}{V}_{21} & = -{K}_{21}K_{11}^{-1}
+\end{split}
+\end{align}
+
+and therefore, by equation \ref{eq18},
+
+\begin{equation}\label{eq24}
+p(x_2|x_1) \sim \mathcal{N}(K_{21}K_{11}^{-1}x_1,K_{22}-K_{21}K_{11}^{-1}K_{12})
+\end{equation}

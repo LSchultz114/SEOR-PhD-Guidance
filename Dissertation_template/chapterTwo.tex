@@ -1,0 +1,214 @@
+
+%% This file represents a sample second chapter of the main body of the dissertation
+%%
+%%**********************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either
+%% expressed or implied; without even the implied warranty of
+%% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE!
+%% User assumes all risk.
+%% In no event shall any contributor to this code be liable for any damages
+%% or losses, including, but not limited to, incidental, consequential, or
+%% any other damages, resulting from the use or misuse of any information
+%% contained here.
+%%**********************************************************************
+%%
+%% $Id: chapterTwo.tex,v 1.4 2006/08/24 21:12:59 Owner Exp $
+%%
+
+
+% A first, optional argument in [ ] is the title as displayed in the table of contents
+% The second argument is the title as displayed here.  Use \\ as appropriate in
+%   this title to get desired line breaks
+\chapter[Contextualization and Literature Review]{Contextualization and Literature Review}
+
+
+\section{Component 1}
+\subsection{History}
+\subsection{What it is}
+\section{How to use it}
+
+The objective of this thesis is to optimize a function $f$ based on a complex simulator with a restricted domain $A \to \mathbb{R}^D$ and a set of inputs $x$. Formally, this can be written as
+
+\begin{equation}
+\min/\max_{x \in A} f(x)
+\end{equation}
+
+Bayesian Optimization accomplishes this by leveraging the concept of Bayesian inference, in which Bayes' theorem is used to update the predicted best values for the unexplored points as additional data is provided. In other words, the distribution of the modeled function, given a set of evidential data, is proportional to the likelihood of the evidence given the model multiplied by the prior assumptions of the model:
+
+\begin{equation}\label{bayes}
+P(Model| Evidence) \propto P(Evidence|Model)P(Model)
+\end{equation}
+
+Since this educated model provides a distribution over the value of the objective at every domain point, we can leverage this information to search for a good point to acquire next.
+
+The following sections outline the procedure to accomplish this technique.
+
+\subsection{Prior}
+
+Our assumptions about the distribution of the model, denoted as $P(Model)$ in equation \ref{bayes}, is known as a Bayesian prior. This is where the GP becomes critical. As a distribution over \textit{functions}, using a GP as a Bayesian prior means we define the behavioral attributes we expect to find in the true function.
+
+We begin with a GP which expresses our prior belief about the true shape of our objective function, $f(x)$.
+
+\begin{equation}
+f(x) \sim \mathcal{GP}(m(x),k(x,x^\prime))
+\end{equation}
+
+In the cases where we expect a level of white noise\footnote{The objective function may not always represent the complex simulator solely. As is demonstrated in the case study, the simulator may only represent a portion of the objective function and white noise will be introduced through the other sources} to exist around $f$  \cite{gramacy_cases_2012}:
+
+\begin{equation}
+f(x) \sim \mathcal{GP}( m(x),k(x,{x}^{\prime}) + \sigma_e^2\delta_{x,x^{\prime}})
+\end{equation}
+where $\delta_{x,x^{\prime}}$ is the Kronecker delta which is one if $x = x^{\prime}$ and zero otherwise; and $\sigma_e^2$ is the variation of the error term.
+
+This formulation continues to result in the variance of an input set $x_j$ increasing away from the nearest alternative input $x_i$ as before; however, it no longer results in zero if $x_j = x_i$ but rather $\delta\sigma_e^2$.
+
+To sample from this prior distribution, function values $f_1,...f_N$ would be drawn for $N$ input sets ${x_{1:N}}$ according to a Gaussian Distribution $\mathcal{N}(\mu = m(x), K= k(x,x^\prime)+\sigma_e^2\delta_{x,x^{\prime}})$ with the kernel matrix given by:
+\begin{equation}
+K = \left[\begin{array}{ccc}k(x_1,x_1)+\delta\sigma_e^2 & \dots & k(x_1,x_N)\\ \vdots & \ddots & \vdots \\k(x_N,x_1) & \dots & k(x_N,x_N)+\delta\sigma_e^2\end{array}\right]
+\end{equation}
+
+where $k(\cdot,\cdot)$ is the chosen kernel function. Figure \ref{fig:BayesGP}(a) shows an example of potential representative functions given only a prior knowledge of the objective function.
+
+
+\begin{figure}
+	\centering
+	\begin{tabular}{cc}
+		\includegraphics[width=0.3\linewidth]{prior.png} &
+		\includegraphics[width=0.3\linewidth]{posterior.png}\\
+		(a) Draw from prior & (b) Draw from posterior
+	\end{tabular}
+	\caption{(a) shows five possible functions from a Gaussian Process prior using the Squared Exponential Kernel. (b) shows five possible functions drawn from the posterior distribution resulting from the prior being conditioned on several observations indicated by an 'x' marker. In both plots, the shaded area represents the 95\% confidence interval.}
+	\label{fig:BayesGP}
+\end{figure}
+
+It is typical, in practice, to set $m(x)=0$ and rely on the second-order statistics, the covariance function, to capture our structural assumptions.
+
+\begin{equation}
+f(x) \sim \mathcal{GP}(0,k(x,x^\prime))
+\end{equation}
+
+\subsubsection{Learning Hyperparameters}
+
+Recall from Section \ref{kernel} that every kernel chosen to represent the covariance function also has a set of hyperparameters that are unknown, such as the amplitude factor $\sigma$ or the lengthscale parameter $\lambda$. Up until now, we have assumed that these parameters are known.
+
+Under a Bayesian framework, these parameters, $Omega$, are also treated as random variables and handled similarly to the prior. 
+
+Under Bayes' rule, estimating the best values for these hyperparameters amounts to maximizing the probability of these parameters given the data.
+
+\begin{equation}
+p(\Omega|f(x)) \propto p(f(x)|\Omega)p(\Omega)
+\end{equation}
+
+This is more commonly referred to as the maximizing the marginal likelihood, $\mathcal{L}(\Omega|f(x))$ and can be understood as how well the data is described by the chosen parameters. In the absence of a strong prior, typically a uniform distribution is used, for which $p(\Omega)$ is equal to a constant. In other words, every combination of hyperparameters are equally likely. As a result, our maximization problem reduces to
+
+\begin{equation}
+\mathcal{L}(\Omega|f(x)) \propto p(f(x)|\Omega)
+\end{equation}
+
+Because we have assumed a Gaussian Process prior, the likelihood $\mathcal{L}$ follows a joint normal distribution which, notably, is equal to the Gaussian Distribution of our $p(f(x))$ that we'd previously defined in the last section while assuming known parameters.
+
+\begin{equation}
+\mathcal{L}(\Omega|f(x))= \mathcal{N}(0,K_\Omega)
+\end{equation}
+
+Here we define $K$ as $K_\Omega$ simply to emphasize that our kernel is dependent upon the hyperparameter set $\Omega$.
+
+Typically, the negative log-likelihood is maximized for ease of computation:
+\begin{align}
+\begin{split}
+\mathcal{L} & = - \log \left[\mathcal{N}(0,K_\Omega)\right] \\
+& = - \log \left[\left(\frac{1}{2\pi}\right)^{n/2} \frac{1}{|K_\Omega|^{1/2}} \ exp\left\{-\frac{1}{2}(f(x)-m)^TK^{-1}_\Omega (f(x)-m)\right\}\right] \\
+& = -\frac{n}{2} \ln(2\pi) - \frac{1}{2} \ln|K_\Omega| - \frac{1}{2}(f(x)-m)^TK^{-1}_\Omega (f(x)-m)
+\end{split}
+\end{align}
+
+Kernel functions tend to have a small number of hyperparameters and therefore overfitting concerns regarding optimizing parameters using training data is minimal. 
+
+\subsection{Acquisition}
+
+We now have a distribution over the estimated values of our true function at every domain point. But do we choose to stay close to points we've previously evaluated, exploiting their influence on neighbors in hopes of finding a slightly more optimal answer, or do we explore the domain and choose an observation that will provide a large amount of information about the shape of the function? Ideally, we would like the ultimate choice to have some combination of both properties.
+
+In BO, this scheme is often referred to as \textit{optimal experimental design} or \textit{active learning}, the latter more common within the machine learning realm. A utility function is built to balance the exploration of unknown portions of the input sample space with the exploitation of all information gathered thus far. Called the acquisition function, the expectation of this utility function is taken over the posterior distribution and the optimal design choice will be the yet-evaluated input set which maximizes this surrogate-based function. Formally, this is written as \cite{ryan_contributions_2014}:
+\begin{equation}
+x^+=\argmax_{x \in D} ~ E[U\left(x,f(x),\Omega)\right]
+\end{equation}
+
+where $x^+$ is the optimal design choice, or input set, decision from the potential candidate set $D$; $U$ is the chosen utility function; $f(x)$ is the surrogated objective function; and $\Omega$ represents the accompanying hyperparameters of the surrogate model.	
+
+With several different parameterized acquisition functions in the literature, it is often unclear which one to use. It should be noted that this framework does not aim to specify a single utility function to be used in all employed circumstances but to provide context behind which active learning utilities should be used for specific optimization situations. 
+
+\cite{chaloner_bayesian_1995} discusses extensively several Bayesian utility functions and their non-Bayesian DOE equivalents. Below are a few more widely used acquisition functions for Bayesian designs:
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\linewidth]{acquisition_example}
+	\caption{ Examples of acquisition functions. The GP posterior is displayed at the top. The underneath plots display the Probability of Improvement (PI) and Expected Improvement (EI) acquisition functions for the GP on the left and right, respectively. The maximum of each function is marked by a red triangle.}
+	\label{fig:AcqEx}
+\end{figure}
+
+\subsubsection{Probability of Improvement}
+The Probability of Improvement(PI) function was first proposed by Harold Kushner \cite{kushner_new_1964} and asserts a simple 0-1 utility:
+
+\begin{equation}
+U(x^\ast) = 
+\begin{cases}
+0, \ f(x^\ast) > f(x^+) \\
+1, \ f(x^\ast) \le f(x^+)
+\end{cases}
+\end{equation}
+
+where $x^\ast$ is a potential candidate from the unevaluated set of possible samples and $x^+ = \arg \max_{j \in x_{eval}} f(j)$, the best solution from the evaluated set which produces the current minimum value found.
+
+When the expectation is taken over the predictive distribution, the point with the highest probability of providing a smaller value becomes the recommended candidate. For application to our Gaussian posterior distribution, this can be written as:
+
+\begin{equation}
+\begin{split}
+PI(x^\ast) = & E[U(x^\ast)] \\
+= & \int_{-\infty}^{f(x^+)} \mathcal{N}\left(f;\mu_{post},K_{post}\right) df\\
+= & P(f(x^\ast) \le f(x^+))  \\
+= & \Phi \left(\frac{\mu_{post}(x^\ast) - f(x^+)}{K_{post}(x^\ast)}\right)
+\end{split}
+\end{equation}
+
+where $\Phi(\cdot)$ is the Gaussian cumulative distribution function and $\mathcal{N}\left(f;\mu_{post},K_{post}\right)$ is the posterior distribution outlined in Section \ref{post}.
+
+In the original form above, this function is purely exploitative and relies heavily on the initial placement of the original samples. A simple modification exists, however, to encourage exploitation by adding a trade-off hyperparameter, $\lambda \ge 0$, to the left-hand side.
+\begin{equation}
+PI(x^\ast) = p(f(x^\ast) \le f(x^+) - \lambda)
+\end{equation}
+Although it can be set at the user's discretion, Kusher recommended a decaying function to encourage exploration at the beginning and exploitation thereafter. 
+
+\subsubsection{Expected Improvement}
+Defined by Mockus \cite{mockus_application_1978}, this utility function places emphasis on the \textit{size} of the improvement to avoid getting stuck in local optimas and under-exploration. 
+
+\begin{equation}
+U(x^\ast) = \max [0, f(x^+) - f(x^\ast)]
+\end{equation}
+
+where $x^\ast$ is a potential candidate from the unevaluated set of possible samples and $x^+ = \arg \max_{j \in x_{eval}} f(j)$, the best solution from the evaluated set which produces the current minimum value found.
+
+When the expectation is taken over the posterior distribution, the point now with the highest probability of providing the greatest amount of improvement becomes the recommended candidate. For application to our Gaussian posterior distribution, this can be written as:
+
+\begin{equation}
+\begin{split}
+EI(x^\ast) = & E[U(x^\ast)] \\
+= & \int_{-\infty}^{(f(x^+)-f(x^\ast)} \mathcal{N}\left(f;\mu_{post},K_{post}\right) df\\
+= & (f(x^+)-f(x^\ast)\Phi \left(\frac{\mu_{post}(x^\ast) - f(x^+)}{K_{post}(x^\ast)}\right) + K_{post}(x^\ast)\phi \left(\frac{\mu_{post}(x^\ast) - L(x^+)}{K_{post}(x^\ast)}\right) \\
+= & K_{post}(x^\ast) [u\Phi(u) + \phi(u)]
+\end{split}
+\end{equation}
+
+where $u = \frac{f(x^+)-\mu_{post}(x^\ast)}{K_{post}(x^\ast)}$, $\Phi(\cdot)$ is the normal cumulative distribution, $\phi(\cdot)$ is the normal density function, and $\mathcal{N}\left(f;\mu_{post},K_{post}\right)$ is the posterior distribution outlined in Section \ref{post}.
+
+With this formulation, a trade-off of exploitation and exploration is automatic; the expected improvement can be influenced by a reduction in the mean function (exploitation) or by increasing the variance (exploration).
+
+\subsubsection{Upper Confidence Bound}
+A recently developed but useful acquisition function, the Upper Confidence Bound (UCB) method moves away from the expected evaluation of a utility function. Instead, it relies on the theoretical proofs that, under specific conditions, the iterative application will converge to the global minimum of the interested function:
+
+\begin{equation}
+UCB(x^\ast) = \mu_{post}(x^\ast) - \beta \sqrt{K_{post}(x^\ast)}
+\end{equation}
+
+where $\beta > 0$ is a trade-off hyperparameter and $[\mu_{post},K_{post}]$ are the summary statistics of the predictive posterior distribution outlined in Section \ref{post}.
+
+\section{Component 2}

@@ -38,7 +38,7 @@ Check the 'additional coursework requirements' tab to find exact ones at [SEOR P
 
 ## Qualifiers
 
-Do this immediately after you have taken the standard 4 classes or reviewed the material well enough!!!
+Do this immediately after you have taken the standard 4 classes or reviewed the material well enough!!! You'll do fine if you've taken the 4 classes; general feedback is that this is medium difficulty 
 
 ### Forms
 
@@ -186,7 +186,7 @@ WTF right?
 
 ### Basic Structure
 
-  * Chapter 1 covers: Introduction, Modivation, contributions you expect to make, notation (incomplete), Pending Tasks (to complete your thesis, can be high level) and Schedule (as you expect)
+  * Chapter 1 covers: Introduction, Motivation, contributions you expect to make, notation (incomplete), Pending Tasks (to complete your thesis, can be high level) and Schedule (as you expect)
    
   * Chapter 2 covers: Literature Review 
       * Start general and narrow down, such as optimization->categories of optimization->specific algorithms
@@ -231,7 +231,7 @@ Almost there...
 
 ### To Do List
 
-* You finish your thesis and send it to your committee
+* You finish your thesis and send it to your committee __**AT LEAST 2**__ weeks before your pre-defense
 * Schedule a pre-defense with **ONLY** your committee
    * This is your practice run! Note everything they say and do it
    * You cannot schedule your defense for 30 days after the pre-defense

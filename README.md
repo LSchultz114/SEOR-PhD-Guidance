@@ -175,7 +175,7 @@ You got this
 
 ## Proposal
 
-WTF right?
+What does this even mean, right?
 
 ### Forms
 * [Proposal Presentation and Admission to Candidacy Form](https://seor.gmu.edu/sites/seor/files/SEOR-PhD_ProposalPresentation.pdf)

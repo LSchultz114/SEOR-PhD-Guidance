@@ -42,7 +42,7 @@ Do this immediately after you have taken the standard 4 classes or reviewed the 
 
 ### Forms
 
-Form: [Request Form for Qualifying Exams](https://seor.gmu.edu/sites/seor/files/SEOR-PhD_QualExam.pdf)
+Form: [Request Form for Qualifying Exams](https://mymasonportal.gmu.edu/bbcswebdav/orgs/AU_Volgenau_SEOR/PhD%20Forms%202021/Request%20Form%20for%20Qualifying%20Exams.docx)
  **due 2 months __before__** you take the exam
 
 ### General 
@@ -88,7 +88,7 @@ Think about what your dissertation will be about
  
 ### Forms
 * [Plan of Study Form](https://seor.gmu.edu/sites/seor/files/SEOR-PhD_StudyPlan17.pdf)
-* [Reduction of Credits Form](https://seor.gmu.edu/sites/seor/files/SEOR-PhD_ReductionOfCredits.pdf)
+* [Reduction of Credits Form](https://registrar.gmu.edu/wp-content/uploads/ROC.pdf)
 
 ### To Do List
 
@@ -111,7 +111,7 @@ Think about what your dissertation will be about
    * 1 additional member must be from another school at GMU 
       
 ## Forms
-* [Advisory Committee Form](https://seor.gmu.edu/sites/seor/files/PhD_AdvisoryCommittee.pdf)
+* [Advisory Committee Form](https://mymasonportal.gmu.edu/bbcswebdav/orgs/AU_Volgenau_SEOR/PhD%20Forms%202021/SEOR%20PhD_%20Advisory%20Committe%20Form.docx)
 
 ## To Do List
 
@@ -134,7 +134,7 @@ Consists of 2 parts:
 Oral must be completed within 30 days of the written portion
 
 ### Forms
-* [Permission to take Comprehensive Examination Form](https://seor.gmu.edu/sites/seor/files/SEOR-PhD_CompExamRequest.pdf)
+* [Permission to take Comprehensive Examination Form](https://mymasonportal.gmu.edu/bbcswebdav/pid-12965307-dt-content-rid-212150112_1/xid-212150112_1)
 
    **Must be turned in __at least__ 10 days before the written exam!!
 ### To Do List
@@ -153,7 +153,7 @@ Oral must be completed within 30 days of the written portion
       I used suvey monkey and gave them several options to pick the best for them at their convienence
       If you can, combine your oral and proposal presentation (see proposal section if you do)
 
-3. Complete [Permission to take Comprehensive Examination Form](https://seor.gmu.edu/sites/seor/files/SEOR-PhD_CompExamRequest.pdf) at least 10 days before written exam
+3. Complete [Permission to take Comprehensive Examination Form](https://mymasonportal.gmu.edu/bbcswebdav/pid-12965307-dt-content-rid-212150112_1/xid-212150112_1) at least 10 days before written exam
    * Examination Reading List: all books from your class and add 'class material and notes for <class number and name>'
    * Examination format: list 4 classes (class number and name), if it is take-home, the time you are given to complete it, and if it is open book)
 
@@ -167,7 +167,7 @@ You got this
 
 ### Forms
 
-* [Comprehensive Examination Report Form](https://seor.gmu.edu/sites/seor/files/SEOR-PhD_CompExamReport.pdf)
+* [Comprehensive Examination Report Form](https://mymasonportal.gmu.edu/bbcswebdav/pid-12965307-dt-content-rid-212142983_1/xid-212142983_1)
 
 ### To Do List
 
@@ -178,9 +178,9 @@ You got this
 What does this even mean, right?
 
 ### Forms
-* [Proposal Presentation and Admission to Candidacy Form](https://seor.gmu.edu/sites/seor/files/SEOR-PhD_ProposalPresentation.pdf)
+* [Proposal Presentation and Admission to Candidacy Form](https://mymasonportal.gmu.edu/bbcswebdav/pid-12965307-dt-content-rid-212037630_1/xid-212037630_1)
 
-* [Doctoral Advancement to Candidacy and Non-course Requirements Form](https://seor.gmu.edu/sites/seor/files/PhD_Advance_To_Candidacy17.pdf)
+* [Doctoral Advancement to Candidacy and Non-course Requirements Form](https://registrar.gmu.edu/wp-content/uploads/DAC-Doctoral-Advancement-to-Candidacy-0117.pdf)
 
    **You cannot register for dissertation (SEOR999) until you have completed this form**
 
@@ -204,9 +204,9 @@ What does this even mean, right?
    
    So listen to their suggestions, note what they ask you to explain more, and incorporate them
 
-* If they approve, fill out the [Proposal Presentation and Admission to Candidacy Form](https://seor.gmu.edu/sites/seor/files/SEOR-PhD_ProposalPresentation.pdf)
+* If they approve, fill out the [Proposal Presentation and Admission to Candidacy Form](https://mymasonportal.gmu.edu/bbcswebdav/pid-12965307-dt-content-rid-212037630_1/xid-212037630_1)
 
-* Fill out [Doctoral Advancement to Candidacy and Non-course Requirements Form](https://seor.gmu.edu/sites/seor/files/PhD_Advance_To_Candidacy17.pdf)
+* Fill out [Doctoral Advancement to Candidacy and Non-course Requirements Form](https://registrar.gmu.edu/wp-content/uploads/DAC-Doctoral-Advancement-to-Candidacy-0117.pdf)
 
 * Register for dissertation (SEOR999)
 
@@ -225,7 +225,7 @@ Nada
 Almost there...
 
 ### Forms
-* [Approval to Defend Dissertation Form](https://seor.gmu.edu/sites/seor/files/ApprovaltoDefend.pdf) 
+* [Approval to Defend Dissertation Form](https://mymasonportal.gmu.edu/bbcswebdav/orgs/AU_Volgenau_SEOR/SEOR%20PhD_%20Approval%20to%20defend%20Dissertation%20Form%281%29.pdf) 
 * Possible: [Dissertation on Reserve Form](https://library.gmu.edu/sites/default/files/common/forms/StudentReservePermissionForm07.2014FINAL.pdf)
 * [Signature Sheet](https://library.gmu.edu/udts/SignatureSheets)
 

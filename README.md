@@ -237,8 +237,7 @@ Almost there...
 * Schedule a pre-defense with **ONLY** your committee
    * This is your practice run! Note everything they say and do it
    * You cannot schedule your defense for 30 days after the pre-defense
-* Committee may require or ask you to place a copy of your dissertation or thesis on reserve 2 weeks prior to defense 
-* Complete [Approval to Defend Dissertation Form](https://seor.gmu.edu/sites/seor/files/ApprovaltoDefend.pdf)
+* Complete [Approval to Defend Dissertation Form]([https://seor.gmu.edu/sites/seor/files/ApprovaltoDefend.pdf](https://mymasonportal.gmu.edu/bbcswebdav/orgs/AU_Volgenau_SEOR/SEOR%20PhD_%20Approval%20to%20defend%20Dissertation%20Form%281%29.pdf))
 * Committee may require or ask you to place a copy of your dissertation or thesis on reserve 2 weeks prior to defense which means filling out the [Dissertation on Reserve Form](https://library.gmu.edu/sites/default/files/common/forms/StudentReservePermissionForm07.2014FINAL.pdf) form 
 * Print out __**AT LEAST 2**__ copies of the [Signature Sheet](https://library.gmu.edu/udts/SignatureSheets) to take to defense. See link for more information
 * Defend
@@ -247,8 +246,8 @@ Almost there...
 ## Final Submission to Library
 
 ### Forms
-* [Embargo Request Form](https://library.gmu.edu/sites/default/files/common/udts/Embargo%20Request_2018.docx) -- even if not doing an embargo
-* [Transmittal Request Form](https://library.gmu.edu/sites/default/files/common/udts/Transmittal%20Sheet_2018.doc)
-* [Survey of Earned Doctorates Form](https://sed.norc.org/doctorate/showRegister.do) 
-* Submit dissertation to ProQuest via the Administrator (https://library.gmu.edu/udts/resources#forms)
+* [Embargo Request Form](https://library.gmu.edu/sites/default/files/common/udts/Embargo%20Request_2019.docx) -- even if not doing an embargo
+* [Transmittal Request Form](https://library.gmu.edu/sites/default/files/common/udts/transmittal_sheet_2020_0.doc)
+* [Survey of Earned Doctorates Form](https://sed.norc.org/showRegister.do) 
+* Submit dissertation to ProQuest via the Administrator (https://www.etdadmin.com/main/home?siteId=376)
 

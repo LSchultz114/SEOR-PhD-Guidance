@@ -96,9 +96,9 @@ Think about what your dissertation will be about
 
 1. Decide on your Dissertation Committee chair -- usually your advisor
   
-2. Complete [Plan of Study Form](https://seor.gmu.edu/sites/seor/files/SEOR-PhD_StudyPlan17.pdf)
+2. Complete [Plan of Study Form]((https://mymasonportal.gmu.edu/bbcswebdav/orgs/AU_Volgenau_SEOR/PhD%20Forms%202021/SEOR%20PHD%20-%20Plan%20of%20study%20new.pdf)
  
-3. If you do not do the 4 standard classes due to Masters, you must fill out [Reduction of Credits Form](https://seor.gmu.edu/sites/seor/files/SEOR-PhD_ReductionOfCredits.pdf)
+3. If you do not do the 4 standard classes due to Masters, you must fill out [Reduction of Credits Form](https://registrar.gmu.edu/wp-content/uploads/ROC.pdf)
 
 4. Get copies of these from SEOR office administrator after it is signed by department and dean as you need it for candidacy
 

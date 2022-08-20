@@ -12,7 +12,7 @@ At the time I did it, these 4 standard classes are what you will be tested on in
 * OR 541: Operations Research: Deterministic Models
 * OR 542: Operations Research: Stochastic Models
 
-Check the 'additional coursework requirements' tab to find exact ones at [SEOR Phd requirements](https://catalog.gmu.edu/colleges-schools/engineering/systems-operations-research/systems-engineering-operations-research-phd/#requirementstext)
+Check the 'additional coursework requirements' tab to find exact ones at [SEOR Phd requirements](https://catalog.gmu.edu/colleges-schools/engineering-computing/engineering/systems-operations-research/systems-engineering-operations-research-phd/#requirementstext)
 
 * **if you do not have a masters**, sign up for at least 3 of the 4 classes (remaining be done in second semester) if you are full-time
 * **if you have a masters but it has been a while**, sign up for whatever class you need to review; alternatively, audit the class instead
@@ -23,7 +23,7 @@ Check the 'additional coursework requirements' tab to find exact ones at [SEOR P
 
 * Email the SEOR office administrator and get the most up-to-date list of class requirements and options
 
-   **suggestion:** fill in your tentative plans in the [Plan of Study Form](https://seor.gmu.edu/sites/seor/files/SEOR-PhD_StudyPlan17.pdf) since you have to do it later anyway
+   **suggestion:** fill in your tentative plans in the [Plan of Study Form](https://mymasonportal.gmu.edu/bbcswebdav/orgs/AU_Volgenau_SEOR/PhD%20Forms%202021/SEOR%20PHD%20-%20Plan%20of%20study%20new.pdf) since you have to do it later anyway
 
 * Start paying attention to what classes you like and what classes you don't
   
@@ -42,7 +42,7 @@ Do this immediately after you have taken the standard 4 classes or reviewed the 
 
 ### Forms
 
-Form: [Request Form for Qualifying Exams](https://mymasonportal.gmu.edu/bbcswebdav/orgs/AU_Volgenau_SEOR/PhD%20Forms%202021/Request%20Form%20for%20Qualifying%20Exams.docx)
+Form: [Request Form for Qualifying Exams](https://mymasonportal.gmu.edu/bbcswebdav/orgs/AU_Volgenau_SEOR/PhD%20Forms%202021/Request%20Form%20for%20Qualifying%20Exams.pdf)
  **due 2 months __before__** you take the exam
 
 ### General 
@@ -77,7 +77,9 @@ Think about what your dissertation will be about
 
 ### Suggested Downloads
 * Reference software like Zotero for keeping references 
-* Learn software that makes formula writing much easier than word like TeXstudio
+* Learn software that makes formula writing much easier than word like TeXstudio/LaTeX
+* Visual Studio Code is a wonderful (and free) interface software that lets you open everything from python code to latex and github
+* Get a github account and start storing your codes there
    
       
 ## Last Semester of Courses
@@ -87,7 +89,7 @@ Think about what your dissertation will be about
    Yay, you finished the first half and you've survived!
  
 ### Forms
-* [Plan of Study Form](https://seor.gmu.edu/sites/seor/files/SEOR-PhD_StudyPlan17.pdf)
+* [Plan of Study Form](https://mymasonportal.gmu.edu/bbcswebdav/orgs/AU_Volgenau_SEOR/PhD%20Forms%202021/SEOR%20PHD%20-%20Plan%20of%20study%20new.pdf)
 * [Reduction of Credits Form](https://registrar.gmu.edu/wp-content/uploads/ROC.pdf)
 
 ### To Do List

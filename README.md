@@ -96,7 +96,7 @@ Think about what your dissertation will be about
 
 1. Decide on your Dissertation Committee chair -- usually your advisor
   
-2. Complete [Plan of Study Form]((https://mymasonportal.gmu.edu/bbcswebdav/orgs/AU_Volgenau_SEOR/PhD%20Forms%202021/SEOR%20PHD%20-%20Plan%20of%20study%20new.pdf)
+2. Complete [Plan of Study Form](https://mymasonportal.gmu.edu/bbcswebdav/orgs/AU_Volgenau_SEOR/PhD%20Forms%202021/SEOR%20PHD%20-%20Plan%20of%20study%20new.pdf)
  
 3. If you do not do the 4 standard classes due to Masters, you must fill out [Reduction of Credits Form](https://registrar.gmu.edu/wp-content/uploads/ROC.pdf)
 
@@ -123,7 +123,7 @@ Think about what your dissertation will be about
 
    Also, ask if they have any advice moving forward because they've done this and they can help! (that's what they are there for)
 
-3. [Complete Advisory Committee form](https://seor.gmu.edu/sites/seor/files/PhD_AdvisoryCommittee.pdf)
+3. [Complete Advisory Committee form](https://mymasonportal.gmu.edu/bbcswebdav/orgs/AU_Volgenau_SEOR/PhD%20Forms%202021/SEOR%20PhD_%20Advisory%20Committe%20Form.docx)
 
 4. Begin setting up Comprehensives
 
